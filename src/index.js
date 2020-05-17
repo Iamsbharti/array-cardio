@@ -73,3 +73,10 @@ console.log(nameMap);
 //3. Sort inventors based on birthday from oldest to youngest
 const birthList = inventors.sort((in1, in2) => (in1.year > in2.year ? 1 : -1));
 console.table(birthList);
+
+//Array.prototype.reduce
+//4. How many years did inventors live
+const yearsLived = inventors.reduce((total, inventor) => {
+  return (total += inventor.passed - inventor.year);
+}, 0);
+console.table(yearsLived);
