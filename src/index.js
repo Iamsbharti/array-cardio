@@ -63,3 +63,10 @@ const inventorsListBorn1500 = inventors.filter(
   inventor => inventor.year >= 1500 && inventor.year < 1600
 );
 console.table(inventorsListBorn1500);
+
+//Array.prototype.map
+//2. Give array of invetor's first and last name
+const nameMap = inventors.map(inventor => `${inventor.first} ${inventor.last}`);
+console.log(nameMap);
+
+//
