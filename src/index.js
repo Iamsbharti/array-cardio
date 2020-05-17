@@ -69,4 +69,7 @@ console.table(inventorsListBorn1500);
 const nameMap = inventors.map(inventor => `${inventor.first} ${inventor.last}`);
 console.log(nameMap);
 
-//
+//Array.prototype.sort
+//3. Sort inventors based on birthday from oldest to youngest
+const birthList = inventors.sort((in1, in2) => (in1.year > in2.year ? 1 : -1));
+console.table(birthList);
