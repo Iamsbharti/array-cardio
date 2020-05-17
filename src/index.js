@@ -51,7 +51,7 @@ const people = [
   "Billings, Josh",
   "Biondo, Frank",
   "Birrell, Augustine",
-  "Black Elk",
+  "Black, Elk",
   "Blair, Robert",
   "Blair, Tony",
   "Blake, William"
@@ -79,4 +79,56 @@ console.table(birthList);
 const yearsLived = inventors.reduce((total, inventor) => {
   return (total += inventor.passed - inventor.year);
 }, 0);
-console.table(yearsLived);
+console.log("yearslived", yearsLived);
+
+//sort the inventors by years lived
+/*const byYearsLived = inventors.sort((in4, in3) =>
+  in3.passed - in3.year < in4.passed - in4.year ? 1 : -1
+);*/
+//console.table(byYearsLived);
+
+//sort the people alphabetically by lastname
+const lastNameSort = people.sort((prev, next) => {
+  const [alast, afirst] = prev.split(", ");
+  const [blast, bfirst] = next.split(", ");
+  return blast > alast ? -1 : 1;
+});
+console.log(lastNameSort);
+
+const data = [
+  "car",
+  "truc",
+  "bike",
+  "walk",
+  "cycle",
+  "car",
+  "truc",
+  "bike",
+  "walk",
+  "cycle",
+  "car",
+  "truc",
+  "bike",
+  "walk",
+  "cycle",
+  "car",
+  "truc",
+  "bike",
+  "walk",
+  "cycle",
+  "car",
+  "truc",
+  "bike",
+  "walk",
+  "cycle"
+];
+//find the instances if each entry
+
+const instances = data.reduce((obj, item) => {
+  if (!obj[item]) {
+    obj[item] = 0;
+  }
+  obj[item]++;
+  return obj;
+}, {});
+console.log(instances);
